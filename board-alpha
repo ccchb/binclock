@@ -1,0 +1,17 @@
+ATTINY 2313-20PU
+
+Portbelegung:
+
+Kategorie (Masse):
+Stunden: PD3
+Minuten: PD4
+Sekunden: PD5
+
+Bits (VCC):
+PB4 .. PB0 PD6
+(LSB .. MSB)
+
+Buttons:
+Stunde: PD0
+Minute: PD1
+

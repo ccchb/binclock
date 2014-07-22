@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+set -u
+
+CCOPTS="-Wall -Wextra -Werror"
+
+SRCFILE="$1"
+ELFFILE="`basename "$SRCFILE" .c`.elf"
+
+avr-gcc $CCOPTS -std=c11 -Os -g -mmcu=attiny2313 -o "$ELFFILE" "$SRCFILE"
+#avrdude -p t2313 -c ponyser -P /dev/ttyUSB0 -b 9600 -U "$ELFFILE"
+avrdude -p t2313 -c usbasp -U "$ELFFILE"
+
